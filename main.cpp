@@ -15,7 +15,9 @@ int main(int argc, char **argv) {
 			return 1;
 		}
 	}
-	// 2. 인자를 확인한 이후 파싱하여 (port & password) 서버에 넣어준다.
-	// 3. 셋업 쪽의 파싱은 내가 담당한다.
-	// 4. 이후는 .... 부탁한다!!!!!!
+	Server server(atoi(argv[1]), argv[2]);
+
+	if (server.setup())
+		return 1;
+	server.run();
 }
